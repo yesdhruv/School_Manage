@@ -7,7 +7,7 @@ function StudentList() {
     { name: "Ajay Negi", class: "10th", rollNo: 1002 },
     { name: "Geeta Bisht", class: "10th", rollNo: 1003 }
   ];
-
+  // const studentLength = Object.keys(students).length; 
   const handleDeleteStudent = (rollNo) => {
     // Logic to delete student from the database
     console.log(`Deleted student with roll no ${rollNo}`);
@@ -35,4 +35,4 @@ function StudentList() {
   );
 }
 
-export default StudentList;
+export  default  StudentList ;

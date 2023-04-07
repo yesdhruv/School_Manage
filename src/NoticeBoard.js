@@ -5,8 +5,15 @@ function NoticeBoard() {
   const [newNotice, setNewNotice] = useState({ title: "", content: "" });
   const [notices, setNotices] = useState([]);
 
-  const handleAddNotice = () => {
+  const handleAddNotice = (e) => {
+    e.preventDefault();
+
+    if (newNotice.title.trim() === "" || newNotice.content.trim() === "") {
+      alert("Please enter a title and content for the notice.");
+      return;
+    }
     // Logic to add new notice to the database
+
     setNotices([...notices, newNotice]);
     setNewNotice({ title: "", content: "" });
   };

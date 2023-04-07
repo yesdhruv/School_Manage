@@ -5,15 +5,24 @@ function TeacherList() {
   const [newTeacher, setNewTeacher] = useState({
     name: "",
     subject: "",
-    class: ""
+    class: "",
   });
   const [teachers, setTeachers] = useState([
     { name: "Sandeep Maheshwari", subject: "Maths", class: "10th" },
     { name: "Gopal Das", subject: "Science", class: "10th" },
-    { name: "Vivek Bindra", subject: "English", class: "10th" }
+    { name: "Vivek Bindra", subject: "English", class: "10th" },
   ]);
 
   const handleAddTeacher = () => {
+    // Check if any of the fields are empty
+    if (
+      newTeacher.name === "" ||
+      newTeacher.subject === "" ||
+      newTeacher.class === ""
+    ) {
+      alert("Please fill in all fields.");
+      return;
+    }
     // Logic to add new teacher to the database
     setTeachers([...teachers, newTeacher]);
     setNewTeacher({ name: "", subject: "", class: "" });
